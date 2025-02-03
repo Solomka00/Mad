@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+def home(request):
+    return HttpResponse("Hello, world!")
+
 urlpatterns = [
+    path("LBLB\index.html", home),  # Главная страница
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),  # Подключаем URL-ы приложения
 ]
