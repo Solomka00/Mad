@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -100,16 +100,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Включите настройки для статических файлов
+# Путь к директории для статики
 STATIC_URL = '/static/'
 
-# Убедитесь, что Django будет искать статические файлы в правильных местах
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Убедитесь, что у вас есть папка 'static' в корне проекта
-]
+# Путь к директории, куда будут собираться все статические файлы
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Убедитесь, что для продакшн-режима у вас настроен путь для сбора статических файлов
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# Убедитесь, что эта директория существует
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Добавьте директорию, если нужно
+]
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
