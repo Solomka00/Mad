@@ -100,7 +100,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Включите настройки для статических файлов
+STATIC_URL = '/static/'
 
+# Убедитесь, что Django будет искать статические файлы в правильных местах
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Убедитесь, что у вас есть папка 'static' в корне проекта
+]
+
+# Убедитесь, что для продакшн-режима у вас настроен путь для сбора статических файлов
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
