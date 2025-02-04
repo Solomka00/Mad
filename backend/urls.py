@@ -6,11 +6,11 @@ from articles import views
 from django.conf.urls.static import static
 from django.conf import settings
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'articles/')
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Главная страница
-    path("index.html/", home),  # Главная страница
+
+    path("articles/index.html/", home),  # Главная страница
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),  # Подключаем URL-ы приложения
 ]
