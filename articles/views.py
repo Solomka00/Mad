@@ -12,4 +12,4 @@ def article_detail(request, pk):
     return render(request, 'articles/article_detail.html', {'article': article})
 # Новое представление для главной страницы
 def home(request):
-    return render(request, 'LBLB/index.html')
+    return render(request, 'index.html')

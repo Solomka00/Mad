@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 def home(request):
-    return render(request, 'LBLB/index.html')
+    return render(request, 'index.html')
 
 urlpatterns = [
     path("LBLB/index.html", home),  # Главная страница
