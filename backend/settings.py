@@ -100,16 +100,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Путь к директории для статики
 STATIC_URL = '/static/'
 
-# Путь к директории, куда будут собираться все статические файлы
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Убедитесь, что эта директория существует
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Добавьте директорию, если нужно
+    BASE_DIR / 'backend' / 'LBLB' / 'static',  # Убедитесь, что путь к статике правильный
 ]
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
